@@ -81,3 +81,14 @@ button {
   font-size:1.5rem;
   animation: floatIn 1.9s ease-in-out forwards;
 }
+.play-again{
+  border-radius: 6px;;
+  margin: 30px;
+  font-size:1.5rem;
+  animation: floatIn 1.9s ease-in-out forwards;
+}
+.play-again:hover{
+  border-radius: 0px;
+  background-color:green;
+  cursor:pointer;
+}

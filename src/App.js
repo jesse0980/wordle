@@ -3,8 +3,10 @@ import './App.css';
 import Row from './components/row.js'
 import {useState} from 'react'
 import soey from './components/IMG_3903.jpg'
+var choices = ["smell", "stink", "hater", "loser", "uggos", "hehim", "sandy", "steez"];
+let targ = choices[Math.floor(Math.random() * (choices.length))];
+console.log(targ);
 function App() {
-  let targ = "smell";
   const [rows, setRows] = useState([
     { id: 0, word: '', ch: false, vis: true,},
     { id: 1, word: '', ch: false, vis: true },
@@ -59,18 +61,33 @@ function App() {
     for(let i = 0; i < rows.length; i++){
         rowComp.push(<Row target={targ} key={rows[i].id} word={rows[i].word} ch={rows[i].ch}/>)
     }
-    if(currWord.toLowerCase() == targ){
+    if(currWord.length > 0 && currWord.toLowerCase() == targ){
 
       setWin(true);
     }
-    setcurrWord("")
+    else if(count >= 4){
+      setLose(true);
+    }
+    setcurrWord("");
     
   }
   
 
-  const [currWord, setcurrWord] = useState();
+  const [currWord, setcurrWord] = useState("");
   const [win, setWin] = useState(false);
-  if(win == false){
+  const [lose, setLose] = useState(false);
+  if(lose === true){
+    return (
+      <div className='win'>
+        <h1 className="end-tag"style={{color:'white'}}>You Lost! You must really stink!</h1>
+        <h1 className="end-tag"style={{color:'white'}}>The word was: {targ}</h1>
+        <form>
+          <input className="play-again" type="submit" value="Play Again?" />
+        </form>
+      </div>
+    )
+  }
+  else if(win == false){
     return (
       <div className="App">
         <h1 style={{fontSize:'5vh', color:'yellow'}}>Soroush Wordle</h1>   
@@ -86,6 +103,9 @@ function App() {
       <h1 style={{color:'white'}}>You WIN!</h1>
       <img className='pic'src={soey}/>
       <h1 className="end-tag"style={{color:'white'}}>You smelled me out because I don't brush my teeth!</h1>
+      <form>
+          <input className="play-again" type="submit" value="Play Again?" />
+      </form>
     </div>
     )
   }
