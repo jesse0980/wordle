@@ -4,9 +4,13 @@ import Box from './box.js'
 import './row.css'
 
 export default function Row(props){
+
     var dict = {}
 
     for(let i = 0; i < props.target.length; i++){
+        if(i < props.word.length && props.word[i] == props.target[i]){
+            continue;
+        }
         if(props.target[i] in dict){
             dict[props.target[i]]++;
         }
@@ -25,13 +29,16 @@ export default function Row(props){
         for(let i = 0; i < 5; i++){
             if(i < props.word.length){
                 if(props.target.indexOf(props.word[i].toLowerCase()) > -1 && (dict[props.word[i].toLowerCase()] > 0 || props.word[i].toLowerCase() == props.target[i])){
-                    dict[props.word[i]]--;
                     if(props.word[i].toLowerCase() == props.target[i]){
                         boxComps.push(<Box check="in" lett={props.word[i]}/>);
                     }
-                    else{
+                    else if(dict[props.word[i].toLowerCase()] > 0){
                         boxComps.push(<Box check="in-wrong" lett={props.word[i]}/>);
                     }
+                    else{
+                        boxComps.push(<Box check="out" lett={props.word[i]}/>);
+                    }
+                    dict[props.word[i]]--;
                 }
                 else{
                     boxComps.push(<Box check="out" lett={props.word[i]}/>);
