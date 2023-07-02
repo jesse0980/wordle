@@ -1,38 +1,83 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+}
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* .submit{
+  margin-top: 20px;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.win{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+}
+button {
+  width: 10vh;
+  --c:  green; /* the color*/
+  
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+button:active {
+  box-shadow: 0 0 9e9q inset white; 
+  color: #fff;
+}
+button {
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: .1em .6em;
+  font-weight: bold;  
+  border: none;
+}
+.main-in{
+  border: none;
+  border-color: transparent;
+  width: max-content;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(140%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+.pic{
+  animation: floatIn 1.7s ease-in-out forwards;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width:30vw;
+  height:30vw;
+}
+.end-tag{
+  margin: 30px;
+  font-size:1.5rem;
+  animation: floatIn 1.9s ease-in-out forwards;
 }

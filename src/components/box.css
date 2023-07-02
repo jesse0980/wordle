@@ -1,0 +1,39 @@
+.border{
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:6vh;
+    height:9vh;
+    border: 1px solid black;
+}
+.in {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:6vh;
+    height:9vh;
+    border: 1px solid black;
+    background-color: rgb(73, 150, 73);
+}
+.in-wrong{
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:6vh;
+    height:9vh;
+    border: 1px solid black;
+    background-color: yellow;
+}
+.out{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:6vh;
+    height:9vh;
+    border: 1px solid black;
+    background-color: gray;
+}
