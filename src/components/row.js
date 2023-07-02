@@ -24,9 +24,9 @@ export default function Row(props){
     if(props.ch === true){
         for(let i = 0; i < 5; i++){
             if(i < props.word.length){
-                if(props.target.indexOf(props.word[i]) > -1 && (dict[props.word[i]] > 0 || props.word[i] == props.target[i])){
+                if(props.target.indexOf(props.word[i].toLowerCase()) > -1 && (dict[props.word[i].toLowerCase()] > 0 || props.word[i].toLowerCase() == props.target[i])){
                     dict[props.word[i]]--;
-                    if(props.word[i] == props.target[i]){
+                    if(props.word[i].toLowerCase() == props.target[i]){
                         boxComps.push(<Box check="in" lett={props.word[i]}/>);
                     }
                     else{

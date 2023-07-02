@@ -59,7 +59,7 @@ function App() {
     for(let i = 0; i < rows.length; i++){
         rowComp.push(<Row target={targ} key={rows[i].id} word={rows[i].word} ch={rows[i].ch}/>)
     }
-    if(currWord == targ){
+    if(currWord.toLowerCase() == targ){
 
       setWin(true);
     }
