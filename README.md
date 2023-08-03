@@ -1,8 +1,9 @@
-Created fun little wordle game that has a list of words having to do with my friend soroush. The game picks the target word randomly from a word bank. I created the structure and logic of the game from scratch as a mini coding challenge for myself. The game uses tile and row components. 
+Created fun little wordle game that has a list of words having to do with my friend soroush. The game picks the target word randomly from a word bank. I created the structure and logic of the game from scratch as a mini coding challenge for myself. 
 
 The project has a few bugs that are pretty easy fixes which I may add later. These include being able to enter a string longer than 5 letters and being able to enter a word that would not be found in any dictionary. However, some of the words in the word bank are not in the dictionary. 
 
-The project is deployed here: 
+The project is deployed here: https://adorable-bavarois-48c25b.netlify.app/?
+
 
 
 # Getting Started with Create React App
